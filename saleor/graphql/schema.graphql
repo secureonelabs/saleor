@@ -512,7 +512,6 @@ input AttributeFilterInput {
   type: AttributeTypeEnum
   inCollection: ID
   inCategory: ID
-  channel: String
 }
 
 input AttributeInput {
@@ -1228,7 +1227,6 @@ input CollectionFilterInput {
   search: String
   metadata: [MetadataInput]
   ids: [ID]
-  channel: String
 }
 
 input CollectionInput {
@@ -4281,7 +4279,6 @@ input ProductFilterInput {
   minimalPrice: PriceRangeInput
   productTypes: [ID]
   ids: [ID]
-  channel: String
 }
 
 type ProductImage {
@@ -4773,7 +4770,7 @@ type Query {
   checkoutLines(before: String, after: String, first: Int, last: Int): CheckoutLineCountableConnection
   channel(id: ID): Channel
   channels: [Channel!]
-  attributes(filter: AttributeFilterInput, sortBy: AttributeSortingInput, before: String, after: String, first: Int, last: Int): AttributeCountableConnection
+  attributes(filter: AttributeFilterInput, sortBy: AttributeSortingInput, channel: String, before: String, after: String, first: Int, last: Int): AttributeCountableConnection
   attribute(id: ID, slug: String): Attribute
   appsInstallations: [AppInstallation!]!
   apps(filter: AppFilterInput, sortBy: AppSortingInput, before: String, after: String, first: Int, last: Int): AppCountableConnection
