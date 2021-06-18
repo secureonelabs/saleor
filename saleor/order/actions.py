@@ -630,9 +630,8 @@ def _move_order_lines_to_target_fulfillment(
         try:
             deallocate_stock(lines_to_dellocate)
         except AllocationError as e:
-            logger.warning(
-                f"Unable to deallocate stock for line {', '.join(e.order_lines)}."
-            )
+            lines = [str(line) for line in e.order_lines]
+            logger.warning(f"Unable to deallocate stock for line {', '.join(lines)}.")
 
     created_fulfillment_lines = FulfillmentLine.objects.bulk_create(
         fulfillment_lines_to_create
