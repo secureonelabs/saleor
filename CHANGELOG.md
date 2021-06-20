@@ -117,6 +117,7 @@ All notable, unreleased changes to this project will be documented in this file.
 - Add file format validation for uploaded images - #7447 by @IKarbowiak
 - Add boolean attributes - #7454 by @piotrgrundas
 - Fix attaching params for address form errors - #7485 by @IKarbowiak
+- Add date & date time attributes - #7500 by @piotrgrundas
 
 ### Breaking
 - Multichannel MVP: Multicurrency - #6242 by @fowczarek @d-wysocki
